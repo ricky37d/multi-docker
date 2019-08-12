@@ -1,0 +1,36 @@
+{
+ "AWSEBDockerrunVersion": 2,
+ "containerDefinitions": [
+   {
+     "name": "client",
+     "image": "ricky37d/multi-client",
+     "hostname": "client",
+     "essential": false
+   },
+   {
+     "name": "server",
+     "image": "ricky37d/multi-server",
+     "hostname": "api",
+     "essential": false 
+   }
+   {
+     "name": "worker",
+     "image": "ricky37d/multi-worker",
+     "hostname": "worker",
+     "essential": false
+   }
+   {
+     "name": "nginx",
+     "image": "ricky37d/multi-nginx",
+     "essential": true,
+     "portMapping": [
+     	  {
+           "hostPort": 80,
+           "containerPort": 80
+          }              
+      ]
+   }
+
+ ]
+}
+
